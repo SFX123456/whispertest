@@ -106,7 +106,11 @@ public class App
             throw new RuntimeException(e);
         }
     }
-    public static void main( String[] args ) throws IOException, LineUnavailableException {
+    public static void main( String[] args ) throws Exception {
+        Test test = new Test();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        bufferedReader.readLine();
+        /*
         final App recorder = new App();
 
         // creates a new thread that waits for a specified
@@ -128,7 +132,7 @@ public class App
 
         // start recording
         recorder.start();
-
+        */
     }
     
     

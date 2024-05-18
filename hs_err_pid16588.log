@@ -1,0 +1,173 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffbda35546, pid=16588, tid=13172
+#
+# JRE version: OpenJDK Runtime Environment (22.0.1+8) (build 22.0.1+8-16)
+# Java VM: OpenJDK 64-Bit Server VM (22.0.1+8-16, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [whisper-jni.dll+0x35546]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --enable-preview -javaagent:C:\Users\Nico\AppData\Local\Programs\IntelliJ IDEA Community Edition\lib\idea_rt.jar=56041:C:\Users\Nico\AppData\Local\Programs\IntelliJ IDEA Community Edition\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 org.example.App
+
+Host: AMD Ryzen 5 1600X Six-Core Processor           , 12 cores, 31G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Sat May 18 19:14:03 2024 Mitteleuropäische Sommerzeit elapsed time: 11.794144 seconds (0d 0h 0m 11s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002498bcd4060):  JavaThread "ForkJoinPool-1-worker-2" daemon [_thread_in_native, id=13172, stack(0x0000008d47400000,0x0000008d47500000) (1024K)]
+
+Stack: [0x0000008d47400000,0x0000008d47500000],  sp=0x0000008d474fc2d0,  free space=1008k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [whisper-jni.dll+0x35546]  (no source info available)
+C  [whisper-jni.dll+0x49e2a]  (no source info available)
+C  [whisper-jni.dll+0x364b4]  (no source info available)
+C  [whisper-jni.dll+0x55a40]  (no source info available)
+C  [whisper-jni.dll+0x55692]  (no source info available)
+C  [whisper-jni.dll+0x5bcb6]  (no source info available)
+C  [whisper-jni.dll+0x5c03c]  (no source info available)
+C  [whisper-jni.dll+0x25e69]  (no source info available)
+C  [whisper-jni.dll+0x2ff9e]  (no source info available)
+C  [whisper-jni.dll+0x2f0e1]  (no source info available)
+C  [whisper-jni.dll+0x7443]  (no source info available)
+C  0x00000249f6d6cfc7  (no source info available)
+
+The last pc belongs to native method entry point (kind = native) (printed below).
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  io.github.givimad.whisperjni.WhisperJNI.full(ILio/github/givimad/whisperjni/WhisperFullParams;[FI)I+0
+j  io.github.givimad.whisperjni.WhisperJNI.full(Lio/github/givimad/whisperjni/WhisperContext;Lio/github/givimad/whisperjni/WhisperFullParams;[FI)I+27
+j  org.example.Test.analyzeAudio([F)V+23
+j  org.example.Test.lambda$new$0([F)V+2
+j  org.example.Test$$Lambda+0x000002498d005708.run()V+8
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@22.0.1
+j  java.lang.VirtualThread.run(Ljava/lang/Runnable;)V+66 java.base@22.0.1
+j  java.lang.VirtualThread$VThreadContinuation$1.run()V+8 java.base@22.0.1
+j  jdk.internal.vm.Continuation.enter0()V+4 java.base@22.0.1
+j  jdk.internal.vm.Continuation.enter(Ljdk/internal/vm/Continuation;Z)V+1 java.base@22.0.1
+J 786  jdk.internal.vm.Continuation.enterSpecial(Ljdk/internal/vm/Continuation;ZZ)V java.base@22.0.1 (0 bytes) @ 0x00000249f7347c5c [0x00000249f7347b20+0x000000000000013c]
+j  jdk.internal.vm.Continuation.run()V+122 java.base@22.0.1
+j  java.lang.VirtualThread.runContinuation()V+72 java.base@22.0.1
+j  java.lang.VirtualThread$$Lambda+0x000002498d06d928.run()V+4 java.base@22.0.1
+j  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute()Ljava/lang/Void;+4 java.base@22.0.1
+j  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute()Ljava/lang/Object;+1 java.base@22.0.1
+j  java.util.concurrent.ForkJoinTask$InterruptibleTask.exec()Z+51 java.base@22.0.1
+j  java.util.concurrent.ForkJoinTask.doExec()V+10 java.base@22.0.1
+j  java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Ljava/util/concurrent/ForkJoinTask;Ljava/util/concurrent/ForkJoinPool$WorkQueue;I)V+49 java.base@22.0.1
+j  java.util.concurrent.ForkJoinPool.scan(Ljava/util/concurrent/ForkJoinPool$WorkQueue;JI)J+245 java.base@22.0.1
+j  java.util.concurrent.ForkJoinPool.runWorker(Ljava/util/concurrent/ForkJoinPool$WorkQueue;)V+62 java.base@22.0.1
+j  java.util.concurrent.ForkJoinWorkerThread.run()V+31 java.base@22.0.1
+v  ~StubRoutines::call_stub 0x00000249f6d6100d
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000000105080
+
+
+Registers:
+RAX=0x0000024a059cd8d0, RBX=0x0000024a059cd8c0, RCX=0xfffffdb5fa7377c0, RDX=0x0000000000000002
+RSP=0x0000008d474fc2d0, RBP=0x0000008d474fc2e0, RSI=0x0000008d474fc4a0, RDI=0x0000008d474fc4a0
+R8 =0x0000000000000040, R9 =0x0000000000000040, R10=0x0000000000105080, R11=0x0000000000000300
+R12=0x0000000000000580, R13=0x0000024a059cd8c0, R14=0x0000000000000040, R15=0x00000000000005dc
+RIP=0x00007fffbda35546, EFLAGS=0x0000000000010203
+
+
+Register to memory mapping:
+
+RAX=0x0000024a059cd8d0 points into unknown readable memory: 0x3c172b6ec404b684 | 84 b6 04 c4 6e 2b 17 3c
+RBX=0x0000024a059cd8c0 points into unknown readable memory: 0x3e87395fbdf4ba97 | 97 ba f4 bd 5f 39 87 3e
+RCX=0xfffffdb5fa7377c0 is an unknown value
+RDX=0x0000000000000002 is an unknown value
+RSP=0x0000008d474fc2d0 is pointing into the stack for thread: 0x000002498bcd4060
+RBP=0x0000008d474fc2e0 is pointing into the stack for thread: 0x000002498bcd4060
+RSI=0x0000008d474fc4a0 is pointing into the stack for thread: 0x000002498bcd4060
+RDI=0x0000008d474fc4a0 is pointing into the stack for thread: 0x000002498bcd4060
+R8 =0x0000000000000040 is an unknown value
+R9 =0x0000000000000040 is an unknown value
+R10=0x0000000000105080 is an unknown value
+R11=0x0000000000000300 is an unknown value
+R12=0x0000000000000580 is an unknown value
+R13=0x0000024a059cd8c0 points into unknown readable memory: 0x3e87395fbdf4ba97 | 97 ba f4 bd 5f 39 87 3e
+R14=0x0000000000000040 is an unknown value
+R15=0x00000000000005dc is an unknown value
+
+Top of Stack: (sp=0x0000008d474fc2d0)
+0x0000008d474fc2d0:   00007fffbdb02f88 000000000000000a
+0x0000008d474fc2e0:   00000249d17e6030 0000000000000000
+0x0000008d474fc2f0:   0000000000000000 0000008d474fbe50
+0x0000008d474fc300:   0000008d00000002 00007fffbda54d82
+0x0000008d474fc310:   363331c124c49d96 00007fffbda5a765
+0x0000008d474fc320:   00007fffbdb02f88 0000000000000009
+0x0000008d474fc330:   00000249d17e6030 0000000000000000
+0x0000008d474fc340:   0000000000000000 0000008d474fbea0
+0x0000008d474fc350:   0000008d00000002 00007fffbda54d82
+0x0000008d474fc360:   0000ad364bcd417b 00007fffbda5a765
+0x0000008d474fc370:   00007fffbdb02f88 000000000000000a
+0x0000008d474fc380:   00007fffbda354d0 00007fffbda49e2a
+0x0000008d474fc390:   0000000000000570 0000008d474fbef0
+0x0000008d474fc3a0:   0000008d474fc4a0 0000000000105080
+0x0000008d474fc3b0:   383331c124c49d76 00007fffbda423b0
+0x0000008d474fc3c0:   00000001bdb02f00 00000249ddce7da0
+0x0000008d474fc3d0:   00000249ddce7f30 00000000000005dc
+0x0000008d474fc3e0:   0000024a05992040 0000000000000570
+0x0000008d474fc3f0:   0000000000000771 0000000000232800
+0x0000008d474fc400:   0000000000000100 00000000000005dc
+0x0000008d474fc410:   0000000000000006 00000249ddce78f0
+0x0000008d474fc420:   000000000337f980 0000000000895440
+0x0000008d474fc430:   0000000000001770 0000000000000600
+0x0000008d474fc440:   0000000000000300 0000000000000770
+0x0000008d474fc450:   0000000000000001 0000000000119400
+0x0000008d474fc460:   0000000000000001 0000000000000080
+0x0000008d474fc470:   0000000000000080 00007fffbda354d0
+0x0000008d474fc480:   0000000000000040 00000249dff968b0
+0x0000008d474fc490:   00000000000008ca 0000000000000000
+0x0000008d474fc4a0:   c2e583c6c2e550d5 c2e77ff4c2e644bc
+0x0000008d474fc4b0:   c2eb6d25c2e94634 c2f012a4c2edd350
+0x0000008d474fc4c0:   c2f31d09c2f1c5eb c2f3ae5bc2f3d9ef 
+
+Instructions: (pc=0x00007fffbda35546)
+0x00007fffbda35446:   7a 10 54 00 f0 c5 ea 59 40 f0 c4 c1 7a 10 4c 00
+0x00007fffbda35456:   f4 c5 f2 59 50 f4 c5 e2 58 e0 c4 c1 7a 10 44 00
+0x00007fffbda35466:   f8 c5 fa 59 48 f8 c5 da 58 da c5 e2 58 d1 48 83
+0x00007fffbda35476:   e9 01 75 b6 49 3b d1 7d 1f 49 8d 04 93 4c 2b ca
+0x00007fffbda35486:   c4 c1 7a 10 04 00 c5 fa 59 08 48 8d 40 04 c5 ea
+0x00007fffbda35496:   58 d1 49 83 e9 01 75 e8 c5 fa 11 13 c5 f8 77 48
+0x00007fffbda354a6:   8b 8d 80 00 00 00 48 33 cc e8 5c 57 03 00 48 8b
+0x00007fffbda354b6:   9c 24 c0 00 00 00 48 81 c4 b0 00 00 00 5d c3 cc
+0x00007fffbda354c6:   cc cc cc cc cc cc cc cc cc cc 48 89 5c 24 08 48
+0x00007fffbda354d6:   89 74 24 18 48 89 7c 24 20 55 48 81 ec b0 00 00
+0x00007fffbda354e6:   00 48 8d 6c 24 20 48 83 e5 e0 48 8b 05 89 c1 04
+0x00007fffbda354f6:   00 48 33 c4 48 89 85 80 00 00 00 49 8b d9 4d 8b
+0x00007fffbda35506:   d0 4c 63 c1 48 8b fa 4d 8b c8 c5 e0 57 db c5 e9
+0x00007fffbda35516:   ef d2 c5 d8 57 e4 c5 d0 57 ed 49 83 e1 e0 7e 6c
+0x00007fffbda35526:   49 8b ca 49 8d 51 ff 48 2b cb 48 c1 ea 05 48 ff
+0x00007fffbda35536:   c2 48 8d 43 10 0f 1f 44 00 00 c4 e2 7d 13 48 f0
+0x00007fffbda35546:   c4 e2 7d 13 44 08 f0 48 8d 40 40 c4 e2 7d b8 d9
+0x00007fffbda35556:   c4 e2 7d 13 48 c0 c4 e2 7d 13 44 01 c0 c4 e2 7d
+0x00007fffbda35566:   b8 d1 c4 e2 7d 13 48 d0 c4 e2 7d 13 44 08 d0 c4
+0x00007fffbda35576:   e2 7d b8 e1 c4 e2 7d 13 48 e0 c4 e2 7d 13 44 08
+0x00007fffbda35586:   e0 c4 e2 7d b8 e9 48 83 ea 01 75 ae c5 dc 58 cb
+0x00007fffbda35596:   c5 d4 58 c2 c5 fc 58 d1 c4 e3 7d 19 d1 01 c5 f0
+0x00007fffbda355a6:   58 c2 c5 fb 7c c8 c5 f3 7c d1 c5 ea 5a da 4d 3b
+0x00007fffbda355b6:   c8 0f 8d f1 00 00 00 49 8b c0 48 8d 35 79 40 0d
+0x00007fffbda355c6:   00 49 2b c1 4c 2b d3 48 83 f8 04 0f 8c ac 00 00
+0x00007fffbda355d6:   00 49 8b d0 4c 8d 5b 02 49 2b d1 4f 8d 1c 4b 48
+0x00007fffbda355e6:   83 ea 04 48 c1 ea 02 48 ff c2 4d 8d 0c 91 0f 1f
+0x00007fffbda355f6:   40 00 0f 1f 84 00 00 00 00 00 43 0f b7 4c 13 fe
+0x00007fffbda35606:   41 0f b7 43 fe 4d 8d 5b 08 c5 fa 10 04 8e 43 0f
+0x00007fffbda35616:   b7 4c 13 f8 c5 fa 59 0c 86 41 0f b7 43 f8 c5 f2
+0x00007fffbda35626:   5a d1 c5 fa 10 04 8e 43 0f b7 4c 13 fa c5 fa 59
+0x00007fffbda35636:   0c 86 41 0f b7 43 fa c5 eb 58 db c5 fa 10 04 8e 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x00007fffbdb02f88 whisper-jni.dll
+stack at sp + 1 slots: 
